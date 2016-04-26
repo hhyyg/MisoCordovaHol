@@ -7,7 +7,7 @@
 
 ## 環境・事前準備
 
-こちらを参考に、Visual Studio Tools for Apache Cordova をインストールしてください。
+[こちら](https://docs.com/cloudcamp/3916)を参考に、Visual Studio Tools for Apache Cordova をインストールしてください。
 
 ## 付録
 
