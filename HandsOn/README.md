@@ -9,5 +9,7 @@
 
 こちらを参考に、Visual Studio Tools for Apache Cordova をインストールしてください。
 
-[演習2で登場する gist](https://gist.github.com/hhyyg/a54e7e40dc89c570491141777f19078e)
+## 付録
+
+[演習2で登場する gist リンク先](https://gist.github.com/hhyyg/a54e7e40dc89c570491141777f19078e)
 

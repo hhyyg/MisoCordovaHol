@@ -198,13 +198,19 @@ jquery.TypeScript.DefinitelyTyped :
 
 インストールが完了すると、「scripts/typings」フォルダ内に「**.d.ts」という型定義ファイルが追加されます。
 
-+ 次の 3 つのファイルを、口述のコードそのままに置き換えます。
++ 次の 3 つのファイルを、後述のコードそのままに置き換えます。
 
 - www/css/index.css
 - www/index.html
 - scripts/index.ts
 
 コードは、[GitHub の gist](https://gist.github.com/hhyyg/a54e7e40dc89c570491141777f19078e) に上げておりますので、コピーを行ってください。
+
++ ★注意★ www/index.html の下のように「Content-Security-Policy」とある行にある URL を、接続先の Azure Mobile Apps の URL に書き換えてください。
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://***書き換えてください***.azurewebsites.net; style-src 'self'; media-src *">
+
+（書き換えないと※実機でデバッグした際にエラーになる可能性があります。）
 
 + デバッグを開始し、エミュレーターにて Todo の操作を行うことができれば成功です。
 
