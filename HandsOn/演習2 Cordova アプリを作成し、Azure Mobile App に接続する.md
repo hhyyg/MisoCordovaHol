@@ -210,7 +210,7 @@ jquery.TypeScript.DefinitelyTyped :
 
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://***書き換えてください***.azurewebsites.net; style-src 'self'; media-src *">
 
-（書き換えないと※実機でデバッグした際にエラーになる可能性があります。）
+（書き換えないと、実機でデバッグした際にエラーになる可能性があります。）
 
 + デバッグを開始し、エミュレーターにて Todo の操作を行うことができれば成功です。
 
