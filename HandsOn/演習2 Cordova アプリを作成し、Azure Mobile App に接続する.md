@@ -219,10 +219,14 @@ jquery.TypeScript.DefinitelyTyped :
 
 + ★注意★ www/index.html の下のように「Content-Security-Policy」とある行にある URL を、接続先の Azure Mobile Apps の URL に書き換えてください。
 
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://***書き換えてください***.azurewebsites.net; style-src 'self'; media-src *">
+    `<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://***書き換えてください***.azurewebsites.net; style-src 'self'; media-src *">`
 
 （書き換えないと、実機でデバッグした際にエラーになる可能性があります。）
 
++ ★注意★ scripts/index.ts の下のコードにて Azure Mobile Apps の URL に置き換えて下さい。
+
+   client = new WindowsAzure.MobileServiceClient("https://***置き換えてください***.azurewebsites.net", "");
+ 
 + デバッグを開始し、エミュレーターにて Todo の操作を行うことができれば成功です。
 
 ![](images/2b_15.png)
