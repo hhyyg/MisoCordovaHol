@@ -100,9 +100,14 @@ A では、予め用意されているプロジェクトを実行しましたが
 - scripts/index.ts : TypeSciprt のファイルです。このプロジェクトのデフォルトのファイルになります。
 - scripts/tsconfig.json : TypeScript のコンパイルオプションの設定ファイルです。設定については[tsconfig.json](http://www.typescriptlang.org/docs/handbook/tsconfig.json.html)を参照します。
 
-+ TypeScript のコンパイルを確認します。「ソリューションエクスプローラー」にてプロジェクトを右クリック、「ビルド」をクリックします。
+
+TypeScript のコンパイルを確認します。
+
++ 「ソリューションエクスプローラー」にてプロジェクトを右クリック、「ビルド」をクリックします。
 
 ![](images/2b_3.png)
+
+※プロジェクトの最初の構築中に、Visual Studio は Cordova とプロジェクトの依存関係のコピーをソリューションにダウンロードします。これには最大 5 分かかり、インターネット接続が必要です。
 
 ビルドの後、「www/scripts」フォルダの中に「appBundle.js」が生成されることを確認します。TypeSciprtで書かれた「scripts/index.ts」がコンパイルされ、JavaScriptで書かれた「appBundle.js」が生成されたことを意味します。
 
@@ -130,7 +135,7 @@ www/index.html :
 
     <script src="scripts/appBundle.js"></script>
 
-index.html は、アプリが起動したときに最初に表示されるページです。以上より、「scripts/index.ts」に書かれた TypeSciprt のロジックが、アプリ起動時に読み込まれることが確認できます。
+index.html は、アプリが起動したときに最初に表示されるページです。以上より、「scripts/index.ts」に TypeSciprt で書かれたロジックが、アプリ起動時に読み込まれることが確認できます。
     
 ※現在の Visual Studio Tools for Apache Cordova では、「/scripts」フォルダ内での TypeScript ファイルのみ対応しています。
 
@@ -150,10 +155,9 @@ Cordova プラグインをインストールすると、「plugins」フォル�
 
 ![](images/2b_7.png)
 
-+ 次に、Html の DOM の操作を行うために jQuery を NuGet を使ってインストールを行います。
+Html の DOM の操作を行うために jQuery をインストールします。ここではインストールの手段として NuGet を使用します。
 
-
-![](images/2b_8.png)
+（jQuery は Html の操作のために今回選択しました。他、AngularJS を使うといった方法もあります。）
 
 + 「ソリューションエクスプローラー」にてプロジェクトを右クリックし、「NuGet パッケージの管理」をクリックします。
 
@@ -167,7 +171,7 @@ Cordova プラグインをインストールすると、「plugins」フォル�
 
 ![](images/2b_11.png)
 
-以下のファイルは削除しても構いません。
+以下のファイルは、今は削除しても構いません。
 
 - scripts/jquery-2.2.3.intellisense.js
 - scripts/jquery-2.2.3.js
@@ -175,14 +179,20 @@ Cordova プラグインをインストールすると、「plugins」フォル�
 
 以上で、Mobile Apps への接続、jQuery のライブラリの準備が完了しました。
 
+（NuGet パッケージである jQuery のインストールは、下の図のように「パッケージマネージャーコンソール」にて「install-package jquery」を実行することでも可能です。）
+
+![](images/2b_8.png)
+
+次に、TypeSciprtの型定義ファイルを追加します。
+
 TypeSciprtファイル「index.ts」にて、Mobile Apps に接続しデータを Html に出力するロジックを書くには、以下の 2つの TypeSciprt 型定義ファイルが必要です。
 （型定義ファイルがないと、TypeSciprt のコンパイルエラーになります。）
 
-- Mobile Apps 用の TypeScript 型定義ファイル
+- Azure Mobile Apps 用の TypeScript 型定義ファイル
 - jQuery の TypeSciprt 方定義ファイル
 
-（jQuery は Html の操作のために今回選択しました。他、AngularJS を使うといった方法もあります。）
 この型定義ファイルのインストールは、今回は NuGet を使って行います。
+（他の方法として、CLI ツール の [typings](https://github.com/typings/typings) があります。）
 
 + 先ほどと同じように、「ソリューションエクスプローラー」を右クリックし、「NuGetパッケージの管理」をクリックします。
 
@@ -200,6 +210,7 @@ jquery.TypeScript.DefinitelyTyped :
 
 + 次の 3 つのファイルを、後述のコードそのままに置き換えます。
 
+置き換えるファイル：
 - www/css/index.css
 - www/index.html
 - scripts/index.ts
