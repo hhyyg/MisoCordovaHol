@@ -194,9 +194,7 @@ TypeSciprtファイル「index.ts」にて、Mobile Apps に接続しデータ�
 この型定義ファイルのインストールは、今回は NuGet を使って行います。
 （他の方法として、CLI ツール の [typings](https://github.com/typings/typings) があります。）
 
-+ 先ほどと同じように、「ソリューションエクスプローラー」を右クリックし、「NuGetパッケージの管理」をクリックします。
-
-図のように、下記の 2 つのパッケージをインストールします。 
++ 先ほどと同じように、「ソリューションエクスプローラー」にてプロジェクトを右クリックし、「NuGetパッケージの管理」をクリックします。
 
 azure-mobile-services-client.TypeScript.DefinitelyTyped :
 
@@ -205,6 +203,18 @@ azure-mobile-services-client.TypeScript.DefinitelyTyped :
 jquery.TypeScript.DefinitelyTyped :
 
 ![](images/2b_13.png)
+
+※上記の NuGet パッケージマネージャー にてパッケージが表示されない場合は、
+「パッケージマネージャーコンソール」にて下の2行を実行し、インストールを行います。
+
+    install-package azure-mobile-services-client.TypeScript.DefinitelyTyped
+    install-package jquery.TypeScript.DefinitelyTyped
+
+![](images/2b_13_2.png)
+
+（「パッケージマネージャーコンソール」ウィンドウが表示されない場合は、Visual Studio のメニューから、
+[表示]>[その他のウィンドウ]>[パッケージマネージャコンソール]でウィンドウを表示します。）
+
 
 インストールが完了すると、「scripts/typings」フォルダ内に「**.d.ts」という型定義ファイルが追加されます。
 
